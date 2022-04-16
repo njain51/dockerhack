@@ -1,0 +1,9 @@
+# we spin up sample webserver inside docker : https://official-nitinjain.medium.com/deploy-simple-dockerized-webserver-in-azure-vm-994d8c1e640d
+
+FROM centos:latest
+MAINTAINER NitinJain
+RUN yum -y install httpd
+echo "HELLO WORLD"
+COPY index.html /var/www/html
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+EXPOSE 80
